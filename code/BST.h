@@ -1,6 +1,7 @@
 #ifndef BST_H__
 #define BST_H__
 
+#include <iostream>
 #include <memory>
 #include <string>
 #include <vector>
@@ -29,6 +30,7 @@ public:
   // but not returned with the 'delete' keyword.
   ~BST();
 
+  void delete_null_nodes(bst_node* subtree);
   // init_node initializes a new bst_node from the heap using the given
   // data, and two NULL children, and returns a pointer to it.
   bst_node* init_node(int data);
@@ -85,6 +87,10 @@ private:
   bst_node** root;
   // you can add add more private member variables and member functions here if
   // you need
+  bst_node* currentNode = new bst_node;
+  bst_node* parent_node = new bst_node;
+  bst_node* suc_node = new bst_node;
+  bst_node* suc_copy = new bst_node;
 };
 
 #endif // BST_H__
